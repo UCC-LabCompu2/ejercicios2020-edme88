@@ -6,29 +6,40 @@
  * @return
  */
 function cambiarUnidades(id, valor) {
+    var metro, pulgada, pie, yarda;
+
     if(isNaN(valor)){
         alert("Se ingreso un valor invalido "+id);
-        document.lasUnidades.unid_metro.value = "";
-        document.lasUnidades.unid_pulgada.value = "";
-        document.lasUnidades.unid_pie.value = "";
-        document.lasUnidades.unid_yarda.value = "";
+        metro = "";
+        pulgada = "";
+        pie = "";
+        yarda = "";
     }else if(id=="metro"){
-        document.lasUnidades.unid_pulgada.value = 39.3701*valor;
-        document.lasUnidades.unid_pie.value = 3.28084*valor;
-        document.lasUnidades.unid_yarda.value = 1.09361*valor;
+        metro = valor;
+        pulgada = 39.3701*valor;
+        pie = 3.28084*valor;
+        yarda = 1.09361*valor;
     }else if(id=="pulgada"){
-        document.lasUnidades.unid_metro.value = 0.0254*valor;
-        document.lasUnidades.unid_pie.value = 0.0833333*valor;
-        document.lasUnidades.unid_yarda.value = 0.0277778*valor;
+        pulgada = valor;
+        metro = 0.0254*valor;
+        pie = 0.0833333*valor;
+        yarda = 0.0277778*valor;
     }else if(id=="yarda"){
-        document.lasUnidades.unid_metro.value = 0.9144*valor;
-        document.lasUnidades.unid_pulgada.value = 36*valor;
-        document.lasUnidades.unid_pie.value = 3*valor;
+        yarda = valor;
+        metro = 0.9144*valor;
+        pulgada = 36*valor;
+        pie = 3*valor;
     }else if(id=="pie"){
-        document.lasUnidades.unid_metro.value = 0.3048*valor;
-        document.lasUnidades.unid_pulgada.value = 12*valor;
-        document.lasUnidades.unid_yarda.value = 0.333333*valor;
+        pie = valor;
+        metro = 0.3048*valor;
+        pulgada = 12*valor;
+        yarda = 0.333333*valor;
     }
+
+    document.lasUnidades.unid_metro.value = metro;
+    document.lasUnidades.unid_pulgada.value = pulgada;
+    document.lasUnidades.unid_pie.value = pie;
+    document.lasUnidades.unid_yarda.value = yarda;
 }
 
 function convertirGR(id) {
