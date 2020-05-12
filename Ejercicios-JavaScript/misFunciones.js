@@ -71,7 +71,7 @@ function mostrar_ocultar(valorMO) {
 function calcularSuma() {
     var num1, num2;
 
-    num1=document.getElementsByName("sum_num1")[0].value;
-    num2=document.getElementsByName("sum_num2")[0].value;
-    document.getElementsByName("sum_total")[0].value= num1 + num2;
+    num1=Number(document.getElementsByName("sum_num1")[0].value);
+    num2=Number(document.getElementsByName("sum_num2")[0].value);
+    document.getElementsByName("sum_total")[0].innerHTML= num1 + num2;
 }
