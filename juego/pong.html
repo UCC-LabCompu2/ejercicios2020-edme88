@@ -53,7 +53,7 @@
 
     var puntaje = {
         puntos: 0,
-        vidas: 0,
+        vidas: 3,
         dibujar: function () {
             ctx.font = "16px Arial";
             ctx.fillStyle = "#0095DD";
@@ -184,12 +184,13 @@
             barra.posX-=7;
         }
 
+
+        detectarColision();
+        dibujarLadrillos();
         pelota.dibujar();
         barra.dibujar();
         puntaje.dibujar();
         puntaje.dibujarVidas();
-        detectarColision();
-        dibujarLadrillos();
 
         x+=dx;
         y+=dy;

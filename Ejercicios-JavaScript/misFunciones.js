@@ -46,6 +46,12 @@ function cambiarUnidades(id, valor) {
     document.lasUnidades.unid_yarda.value = Math.round(yarda*100)/100;
 }
 
+/**
+ * Conversion de grados a Radianes
+ * @method convertirGR
+ * @param {number} id - El id de los inputs de metros, yardas, pies o pulgadas
+ * @return
+ */
 function convertirGR(id) {
     var grad, rad;
     if(id=="grados"){
@@ -175,4 +181,27 @@ function dibujarImagen(posX, posY) {
     img.onload = function () {
         ctx.drawImage(img, posX, posY)
     }
+}
+
+x=0;
+dx=2;
+function animarAuto() {
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+
+    canvas.width = canvas.width;
+
+    //dibujar fondo
+
+    var img = new Image();
+    img.src = "images/auto.png";
+
+    img.onload = function () {
+        ctx.drawImage(img, x, 100)
+    }
+
+    if(x>canvas.width){
+        x=0;
+    }
+    x+=dx;
 }
